@@ -16,9 +16,3 @@ Technologies used
 HTML
 CSS (Flexbox for layout, no frameworks)
 Google Fonts (Poppins)
-
-No JavaScript or build tools — just a single index.html file you can open directly in a browser.
-
-Task 2 (optional bonus)
-
-Not attempted in this submission.
