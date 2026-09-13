@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Sessions — E-Cell BITS Hyderabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #2E2A4A;
+    background-color: #FFF6E9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h1, h2, h3 {
+    font-weight: 600;
+  }
+
+  /* ---------- NAVBAR ---------- */
+  nav {
+    background-color: #FFF6E9;
+    padding: 20px 0;
+    border-bottom: 3px solid #2E2A4A;
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2E2A4A;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #2E2A4A;
+    font-weight: 500;
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-block;
+    background-color: #FF8264;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: default;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background-color: #FFD966;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+  }
+
+  .hero-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  .hero-details span {
+    background-color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 20px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 50px auto;
+    color: #55506e;
+  }
+
+  /* ---------- ABOUT CARDS ---------- */
+  .about {
+    background-color: #ffffff;
+  }
+
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: #FFF6E9;
+    border-radius: 14px;
+    padding: 30px;
+    width: 280px;
+  }
+
+  .card:nth-child(1) { background-color: #FFE8B0; }
+  .card:nth-child(2) { background-color: #FFC5B3; }
+  .card:nth-child(3) { background-color: #C6F1E0; }
+
+  .card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  /* ---------- SPEAKERS ---------- */
+  .speakers {
+    background-color: #6C63FF;
+    color: #ffffff;
+  }
+
+  .speakers .section-subtitle {
+    color: #E4E1FF;
+  }
+
+  .speaker-card {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 25px;
+    width: 260px;
+  }
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2E2A4A;
+  }
+
+  .speaker-card p.role {
+    font-size: 14px;
+    color: #E4E1FF;
+    margin-bottom: 12px;
+  }
+
+  .speaker-card p.quote {
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule {
+    background-color: #ffffff;
+  }
+
+  .schedule-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .schedule-item:nth-child(odd) { background-color: #FFF6E9; }
+  .schedule-item:nth-child(even) { background-color: #E7F7F1; }
+
+  .schedule-time {
+    font-weight: 700;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .schedule-item h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+
+  .schedule-item p {
+    font-size: 15px;
+    color: #55506e;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta {
+    background-color: #FF8264;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .cta p {
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta .btn {
+    background-color: #ffffff;
+    color: #FF8264;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background-color: #2E2A4A;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 30px;
+    }
+
+    .card, .speaker-card {
+      width: 100%;
+    }
+
+    .schedule-time {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="logo">Spark Sessions</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Where BITS Hyderabad's next founders come to listen first.</h1>
+      <p>A once-a-month evening where two founders share what actually happened before the funding announcement, the product launch, or the "overnight" success.</p>
+      <div class="hero-details">
+        <span>📅 Saturday, October 24 · 5:00 PM</span>
+        <span>📍 Antaragni Auditorium</span>
+        <span>🎟️ Free · 180 seats</span>
+      </div>
+      <span class="btn">Reserve your seat</span>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">Why this isn't another panel</h2>
+      <p class="section-subtitle">We built Spark Sessions because most campus talks feel rehearsed. This one is designed not to.</p>
+      <div class="card-row">
+        <div class="card">
+          <h3>Unfiltered, on purpose</h3>
+          <p>Founders talk about what almost made them quit, not their highlight reel.</p>
+        </div>
+        <div class="card">
+          <h3>Small room, real questions</h3>
+          <p>Capped at 180 seats so the Q&A turns into a real conversation.</p>
+        </div>
+        <div class="card">
+          <h3>Run by students</h3>
+          <p>Sourced, booked, and hosted end-to-end by E-Cell's own tech and ops teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="speakers" id="speakers">
+    <div class="container">
+      <h2 class="section-title">Who's on stage</h2>
+      <p class="section-subtitle">Two builders, two very different paths.</p>
+      <div class="card-row">
+        <div class="speaker-card">
+          <div class="avatar" style="background-color:#FFD966;">AR</div>
+          <h3>Ananya Rao</h3>
+          <p class="role">Founder, Marrow Skincare</p>
+          <p class="quote">"I priced my first product wrong three times before it made a profit."</p>
+        </div>
+        <div class="speaker-card">
+          <div class="avatar" style="background-color:#FF8264;">KM</div>
+          <h3>Karthik Menon</h3>
+          <p class="role">Founder, Routeway Logistics</p>
+          <p class="quote">"I left BITS in my second year. My parents didn't speak to me about it for a month."</p>
+        </div>
+        <div class="speaker-card">
+          <div class="avatar" style="background-color:#C6F1E0;">PS</div>
+          <h3>Priya Suresh</h3>
+          <p class="role">Moderator, E-Cell Tech Team</p>
+          <p class="quote">"My job tonight is to ask the question you're too polite to ask."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <h2 class="section-title">How the evening runs</h2>
+      <p class="section-subtitle">Two hours, two speakers, and time to actually talk to people.</p>
+
+      <div class="schedule-item">
+        <div class="schedule-time">5:00 PM</div>
+        <div>
+          <h3>Doors open</h3>
+          <p>Chai, samosas, and a table of past founders' merch.</p>
+        </div>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">5:30 PM</div>
+        <div>
+          <h3>Welcome note</h3>
+          <p>A five-minute intro from the E-Cell team.</p>
+        </div>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">5:45 PM</div>
+        <div>
+          <h3>Fireside chat: Ananya Rao</h3>
+          <p>Bootstrapping a skincare brand to ₹2 crore in revenue before turning 22.</p>
+        </div>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">6:30 PM</div>
+        <div>
+          <h3>Fireside chat: Karthik Menon</h3>
+          <p>Dropping out to build a logistics startup, and raising a seed round eight months later.</p>
+        </div>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">7:15 PM</div>
+        <div>
+          <h3>Open floor</h3>
+          <p>Unmoderated audience questions.</p>
+        </div>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">7:45 PM</div>
+        <div>
+          <h3>Networking + mentorship sign-ups</h3>
+          <p>Both speakers stay back for 10-minute 1:1 slots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>180 seats. No repeat sessions.</h2>
+      <p>Entry is free, but seats have run out early at each of the last two sessions.</p>
+      <span class="btn">Reserve your seat</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>E-Cell BITS Hyderabad · Tech Team</p>
+      <p>Details on this page are placeholders for the induction task.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
